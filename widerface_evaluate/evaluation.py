@@ -224,7 +224,7 @@ def voc_ap(rec, prec):
     return ap
 
 
-def evaluation(pred, gt_path, iou_thresh=0.5):
+def evaluation(pred, gt_path, save_path, iou_thresh=0.5):
     pred = get_preds(pred)
     norm_score(pred)
     facebox_list, event_list, file_list, hard_gt_list, medium_gt_list, easy_gt_list = get_gt_boxes(gt_path)
@@ -279,6 +279,12 @@ def evaluation(pred, gt_path, iou_thresh=0.5):
     print("Medium Val AP: {}".format(aps[1]))
     print("Hard   Val AP: {}".format(aps[2]))
     print("=================================================")
+    save_name = save_path + 'result_evalution.txt'
+    with open(save_name, "w") as fd:
+        fd.write("Easy   Val AP: {}\n".format(aps[0]))
+        fd.write("Medium Val AP: {}\n".format(aps[1]))
+        fd.write("Hard   Val AP: {}".format(aps[2]))
+    print('done.')
 
 
 if __name__ == '__main__':
@@ -286,9 +292,10 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('-p', '--pred', default="widerface_evaluate/widerface_txt/")
     parser.add_argument('-g', '--gt', default='widerface_evaluate/ground_truth/')
+    parser.add_argument('-s', '--save_path', default="runs/train/origin/ ")
 
     args = parser.parse_args()
-    evaluation(args.pred, args.gt)
+    evaluation(args.pred, args.gt, args.save_path)
 
 
 

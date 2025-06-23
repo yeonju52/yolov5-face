@@ -1,5 +1,7 @@
 ## What's New
 
+**2024.04** [ncnn-android-yolov8-face](https://github.com/derronqi/ncnn-android-yolov8-face)
+
 **2023.04** [yolov8-face](https://github.com/derronqi/yolov8-face) (🔥🔥🔥↑) 
 
 **2022.10** [yolov7-face](https://github.com/derronqi/yolov7-face) (🔥🔥🔥↑)
@@ -45,6 +47,7 @@
 | ***YOLOv5s***        | 94.56 | 92.92  | 83.84 |
 | ***YOLOv5m***        | 95.46 | 93.87  | 85.54 |
 
+**QQ Group**: 1164802745
 
 ## Introduction
 
